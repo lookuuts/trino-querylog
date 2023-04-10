@@ -47,7 +47,13 @@ public class QueryLogListener implements EventListener {
     @Override
     public void queryCompleted(final QueryCompletedEvent queryCompletedEvent) {
         if (trackEventCompleted) {
-            logger.info(new ObjectMessage(queryCompletedEvent));
+            logger.info(
+                queryCompletedEvent.getMetadata().getQueryId() + " : " +
+                queryCompletedEvent.getMetadata().getQueryState() + " : " +
+                queryCompletedEvent.getMetadata().getQuery() + " : " +
+                queryCompletedEvent.getStatistics().getTotalRows() + " : " +
+                queryCompletedEvent.getStatistics().getTotalBytes() + " : "
+            );
         }
     }
 
