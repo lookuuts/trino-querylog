@@ -50,6 +50,7 @@ public class QueryLogListener implements EventListener {
             logger.info(
                 queryCompletedEvent.getMetadata().getQueryId() + " : " +
                 queryCompletedEvent.getMetadata().getQueryState() + " : " +
+                queryCompletedEvent.getContext().getUser() + " : " +
                 queryCompletedEvent.getMetadata().getQuery() + " : " +
                 queryCompletedEvent.getStatistics().getTotalRows() + " : " +
                 queryCompletedEvent.getStatistics().getTotalBytes() + " : "
