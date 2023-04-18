@@ -54,7 +54,6 @@ class QueryLogListenerTest {
         }
     }
 
-
     @Test
     void onlyQueryCreatedEvents() throws IOException {
         try (LoggerContext loggerContext = Configurator.initialize(

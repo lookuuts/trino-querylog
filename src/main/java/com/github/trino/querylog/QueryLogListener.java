@@ -48,12 +48,12 @@ public class QueryLogListener implements EventListener {
     public void queryCompleted(final QueryCompletedEvent queryCompletedEvent) {
         if (trackEventCompleted) {
             logger.info(
-                queryCompletedEvent.getMetadata().getQueryId() + " : " +
-                queryCompletedEvent.getMetadata().getQueryState() + " : " +
-                queryCompletedEvent.getContext().getUser() + " : " +
-                queryCompletedEvent.getMetadata().getQuery() + " : " +
-                queryCompletedEvent.getStatistics().getTotalRows() + " : " +
-                queryCompletedEvent.getStatistics().getTotalBytes() + " : "
+                "{ \"getQueryId\":\"" + queryCompletedEvent.getMetadata().getQueryId() + "\"," +
+                "\"getQueryState\":\""  + queryCompletedEvent.getMetadata().getQueryState() + "\"," +
+                "\"getUser\":\""  + queryCompletedEvent.getContext().getUser() + "\"," +
+                "\"getQuery\":\""  + queryCompletedEvent.getMetadata().getQuery() + "\"," +
+                "\"getTotalRows\":\""  + queryCompletedEvent.getStatistics().getTotalRows() + "\"," +
+                "\"getTotalBytes\":\""  + queryCompletedEvent.getStatistics().getTotalBytes() + "\"}"
             );
         }
     }
