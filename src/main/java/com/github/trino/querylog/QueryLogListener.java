@@ -51,7 +51,7 @@ public class QueryLogListener implements EventListener {
                 "{ \"getQueryId\":\"" + queryCompletedEvent.getMetadata().getQueryId() + "\"," +
                 "\"getQueryState\":\""  + queryCompletedEvent.getMetadata().getQueryState() + "\"," +
                 "\"getUser\":\""  + queryCompletedEvent.getContext().getUser() + "\"," +
-                "\"getQuery\":\""  + queryCompletedEvent.getMetadata().getQuery() + "\"," +
+                "\"getQuery\":\""  + queryCompletedEvent.getMetadata().getQuery().replace("\"", ":::") + "\"," +
                 "\"getTotalRows\":\""  + queryCompletedEvent.getStatistics().getTotalRows() + "\"," +
                 "\"getTotalBytes\":\""  + queryCompletedEvent.getStatistics().getTotalBytes() + "\"}"
             );
